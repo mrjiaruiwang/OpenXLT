@@ -1003,7 +1003,7 @@ classdef Openxlt
                 % trim trailing whitespace
                 cond_pass = true;
                 while(cond_pass)
-                    cond_pass = (isspace(fname(end)));
+                    cond_pass = (isspace(fname(end)) | double(fname(end)) == 0);  % replace white spaces and Null characters
                     if (cond_pass)
                         fname(end) = [];
                     end
